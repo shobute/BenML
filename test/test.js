@@ -46,9 +46,9 @@ describe('bml', function () {
   });
 
   it('should make lists', function () {
-      eq('* foo', '* foo');
-      eq('* foo\n* bar', '<ul><li>foo<li>bar</ul>');
-      eq('* foo\n* bar *baz*', '<ul><li>foo<li>bar <em>baz</em></ul>');
-      eq('* foo\n** bar\n* baz', '<ul><li>foo<ul><li>bar</ul><li>baz</ul>');
+      eq('- foo', '- foo');
+      eq('- foo\n- bar', '<ul><li>foo<li>bar</ul>');
+      eq('- foo\n- bar *baz*', '<ul><li>foo<li>bar <em>baz</em></ul>');
+      eq('- foo\n-- bar\n- baz', '<ul><li>foo<ul><li>bar</ul><li>baz</ul>');
   });
 })

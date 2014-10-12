@@ -44,14 +44,14 @@ var benml = function (text) {
     };
 
     // Lists
-    blockRules[/([^\n]*\n\s*\*+)+\s+[^\n]+/] = function (m) {
+    blockRules[/([^\n]*\n\s*-+)+\s+[^\n]+/] = function (m) {
         var items = m[0].trim().split('\n');
         var prevIndent = 0;
         var html = '';
         var uls = 0;
         for (var i = 0; i < items.length; i++) {
-            var indent = items[i].match(/^\*+/)[0].length;
-            var content = lexer(items[i].replace(/^\*+\s+/, ''), inlineRules);
+            var indent = items[i].match(/^-+/)[0].length;
+            var content = lexer(items[i].replace(/^-+\s+/, ''), inlineRules);
             if (indent > prevIndent) {
                 html += '<ul>';
                 uls++;
