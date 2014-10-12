@@ -5,7 +5,7 @@ var benml = function (text) {
     var blockRules = {}
 
     // Escape
-    inlineRules[/\\([\<\>\*\\])/] = function (m) {
+    inlineRules[/\\(.)/] = function (m) {
         return m[1];
     };
 
